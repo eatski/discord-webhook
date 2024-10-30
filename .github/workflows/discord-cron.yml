@@ -3,7 +3,7 @@ name: Send Discord Message
 on:
   schedule:
     # 毎日22:00に実行（JST）
-    - cron: '45 14 * * *'
+    - cron: '45 12 * * *'
   workflow_dispatch:
 
 jobs:
@@ -16,5 +16,5 @@ jobs:
           WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
           curl -H "Content-Type: application/json" \
-          -d '{"content": "<!channel> まるちゃんのご飯の時間です。"}' \
+          -d '{"content": "@here まるちゃんのご飯の時間です。"}' \
           $WEBHOOK_URL
