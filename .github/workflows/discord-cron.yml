@@ -1,0 +1,19 @@
+name: Send Discord Message
+
+on:
+  schedule:
+    # 毎日22:00に実行（JST）
+    - cron: '0 15 * * *'
+
+jobs:
+  send-discord-message:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send message to Discord
+        env:
+          WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          curl -H "Content-Type: application/json" \
+          -d '{"content": "毎晩10時の定型メッセージです！"}' \
+          $WEBHOOK_URL
