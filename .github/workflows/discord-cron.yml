@@ -16,5 +16,5 @@ jobs:
           WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
           curl -H "Content-Type: application/json" \
-          -d '{"content": "まるちゃんのご飯の時間です。"}' \
+          -d '{"content": "@here まるちゃんのご飯の時間です。"}' \
           $WEBHOOK_URL
