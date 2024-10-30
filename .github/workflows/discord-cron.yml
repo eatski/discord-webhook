@@ -4,6 +4,7 @@ on:
   schedule:
     # 毎日22:00に実行（JST）
     - cron: '0 15 * * *'
+  workflow_dispatch:
 
 jobs:
   send-discord-message:
