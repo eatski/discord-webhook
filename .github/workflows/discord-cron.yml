@@ -3,7 +3,7 @@ name: Send Discord Message
 on:
   schedule:
     # 毎日22:00に実行（JST）
-    - cron: '0 15 * * *'
+    - cron: '45 14 * * *'
   workflow_dispatch:
 
 jobs:
